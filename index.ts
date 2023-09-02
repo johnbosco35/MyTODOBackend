@@ -4,6 +4,7 @@ import express from "express";
 import { Application } from "express-serve-static-core";
 import { DBconnect } from "./config/DB";
 import { Mainapp } from "./main";
+import "./config/auth";
 import { environemtVariable } from "./env/environment";
 
 const app: Application = express();

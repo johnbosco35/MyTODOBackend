@@ -15,4 +15,7 @@ export const environemtVariable = {
   google_refreshtoken: process.env.google_refreshtoken,
   accessToken: process.env.accessToken,
   google_redirect: process.env.google_redirect,
+  CLIENT_ID: process.env.client_id,
+  CLIENTSECRET: process.env.clientSecret,
+  CALLBACKURL: process.env.callbackUrl,
 };

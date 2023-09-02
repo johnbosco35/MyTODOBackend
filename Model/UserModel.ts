@@ -34,6 +34,9 @@ const UserSchema = new mongoose.Schema<user>(
       type: String,
       required: true,
     },
+    googleId: {
+      type: String,
+    },
     Task: [
       {
         type: mongoose.Schema.Types.ObjectId,

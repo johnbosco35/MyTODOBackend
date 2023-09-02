@@ -7,6 +7,7 @@ export interface user {
   Confirmpassword: string;
   UserImage: string;
   UserImageID: string;
+  googleId: string;
   Task: any;
   assignedTask: {}[];
   receivedTask: {}[];
