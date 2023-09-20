@@ -26,13 +26,12 @@ const UserSchema = new mongoose.Schema<user>(
       type: String,
       required: true,
     },
-    Confirmpassword: {
-      type: String,
-      required: true,
-    },
+    // Confirmpassword: {
+    //   type: String,
+    //   required: true,
+    // },
     UserImage: {
       type: String,
-      required: true,
     },
     googleId: {
       type: String,

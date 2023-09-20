@@ -36,7 +36,7 @@ export const Mainapp = (app: Application) => {
   app.get(
     "/google/callback",
     passport.authenticate("google", {
-      successRedirect: "http://127.0.0.1:5173/",
+      successRedirect: "http://localhost:3000/Home/",
       failureRedirect: "/google/callback/failure",
     })
   );

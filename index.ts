@@ -11,10 +11,10 @@ const app: Application = express();
 
 const port: Number | any = process.env.port;
 Mainapp(app);
-DBconnect();
 
 const server = app.listen(environemtVariable.port, () => {
-  console.log("Server is now on");
+  DBconnect();
+  // console.log("Server is now on");
 });
 
 process.on("unhandledRejection", (error: any) => {
