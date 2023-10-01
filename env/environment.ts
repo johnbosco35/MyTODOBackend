@@ -12,10 +12,13 @@ export const environemtVariable = {
   api_secert: process.env.api_secert,
   google_id: process.env.google_id,
   google_secret: process.env.google_secret,
+  github_id: process.env.github_id,
+  github_secret: process.env.github_secret,
   google_refreshtoken: process.env.google_refreshtoken,
   accessToken: process.env.accessToken,
   google_redirect: process.env.google_redirect,
   CLIENT_ID: process.env.client_id,
   CLIENTSECRET: process.env.clientSecret,
   CALLBACKURL: process.env.callbackUrl,
+  callbackUrl2: process.env.callbachUrl2,
 };

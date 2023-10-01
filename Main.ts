@@ -6,6 +6,8 @@ import router from "./Router/userRouter";
 import taskRouter from "./Router/taskRouter";
 import passport from "passport";
 import session from "express-session";
+import "./config/Github";
+import "./config/auth";
 
 export const Mainapp = (app: Application) => {
   app.use(express.json()).use(cors());
@@ -25,7 +27,7 @@ export const Mainapp = (app: Application) => {
       message: "Server is still active🚀🚀🚀",
     });
   });
-  app.get("/check", (req: Request, res: Response) => {
+  app.get("/google", (req: Request, res: Response) => {
     res.send(`<a href= "/veri/google">Authenicate with google</a>`);
   });
 
@@ -49,4 +51,21 @@ export const Mainapp = (app: Application) => {
   });
   app.use("/api/v1", router);
   app.use("/api/v1", taskRouter);
+
+  app.get("/github", (req: Request, res: Response) => {
+    res.send(`<a href= "/veri/github">Authenicate with github</a>`);
+  });
+
+  app.get(
+    "/veri/github",
+    passport.authenticate("github", { scope: ["user:email"] })
+  );
+
+  app.get(
+    "/github/callback",
+    passport.authenticate("github", {
+      successRedirect: "http://localhost:3000/Home/",
+      failureRedirect: "/github/callback/failure",
+    })
+  );
 };
