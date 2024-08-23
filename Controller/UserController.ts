@@ -1,4 +1,3 @@
-/** @format */
 import express, { Request, Response } from "express";
 import UserModel from "../Model/UserModel";
 import bcrypt from "bcrypt";
@@ -151,9 +150,10 @@ export const findOneUser = async (req: Request, res: Response) => {
       message: "Found successfully",
       data: user,
     });
-  } catch (error) {
+  } catch (error: any) {
     res.status(400).json({
       message: "Error occured",
+      data: error.message,
     });
   }
 };
@@ -162,7 +162,7 @@ export const findAllUsers = async (req: Request, res: Response) => {
   try {
     const allUsers = await UserModel.find();
 
-    res.status(400).json({
+    res.status(200).json({
       message: "Successful",
       data: allUsers,
     });

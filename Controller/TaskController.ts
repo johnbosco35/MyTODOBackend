@@ -1,5 +1,3 @@
-/** @format */
-
 import express, { Request, Response } from "express";
 import TaskModel from "../Model/TaskModel";
 import UserModel from "../Model/UserModel";
@@ -130,3 +128,32 @@ export const AssignTask = async (req: Request, res: Response) => {
     });
   }
 };
+
+// export const Filter = async (req:Request, res:Response) =>{
+//   try {
+    
+//     const {query} = req.query
+
+//     if(!query) {
+//       return res.status(400).json({message: "Please provide a query to filter tasks"})
+//     }
+
+// const 
+
+//     // const filteredTasks = tasks.filter(task => 
+//     //   task.toLowerCase().includes(query.toLowerCase())
+//     // );
+    
+//     res.status(200).json({ 
+//       message:"query task Successfully",
+//       data:filteredTasks,
+//      });
+  
+
+//   } catch (error) {
+//     res.status(404).json({
+//       message: "Error occur when trying to filter task",
+//       data: error.message
+//     })
+//   }
+// }

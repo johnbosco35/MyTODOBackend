@@ -1,6 +1,4 @@
-/** @format */
-
-import express, { Application, Request, Response } from "express";
+import express, { Application, NextFunction, Request, Response } from "express";
 import cors from "cors";
 import router from "./Router/userRouter";
 import taskRouter from "./Router/taskRouter";
@@ -9,8 +7,18 @@ import session from "express-session";
 import "./config/Github";
 import "./config/auth";
 
+
 export const Mainapp = (app: Application) => {
+  
+  let tasks:any[] = []
+
+  const taskStorage = (req:any, res:Response, next:NextFunction ) =>{
+    req.tasks = tasks
+  
+    next()
+  }
   app.use(express.json()).use(cors());
+  app.use(taskStorage)
   app.use(
     session({
       secret: "keyboard cat",

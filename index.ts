@@ -1,11 +1,9 @@
-/** @format */
-
 import express from "express";
 import { Application } from "express-serve-static-core";
 import { DBconnect } from "./config/DB";
-import { Mainapp } from "./main";
 import "./config/auth";
 import { environemtVariable } from "./env/environment";
+import { Mainapp } from "./Main";
 
 const app: Application = express();
 
@@ -14,7 +12,7 @@ Mainapp(app);
 
 const server = app.listen(environemtVariable.port, () => {
   DBconnect();
-  // console.log("Server is now on");
+  console.log("Server is now on");
 });
 
 process.on("unhandledRejection", (error: any) => {
